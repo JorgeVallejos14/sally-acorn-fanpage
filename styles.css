@@ -106,8 +106,12 @@ a { color: var(--color-accent); }
     transform: translateY(-2px);
 }
 
-section { padding: var(--space-x1) var(--space-md); max-width: 1100px;
-margin-inline: auto; }
+section {
+  padding: clamp(2.5rem, 8vw, var(--space-xl)) var(--space-md);
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
 section h2 {
     font-size: clamp(1.8rem, 3vw, 2.6rem);
     margin-bottom: var(--space-md);
@@ -165,6 +169,22 @@ section h2 {
     transition: transform var(--transition);
 }
 #theme-toggle:hover { transform: rotate(20deg); }
+
+/* Celulares chicos: el header pasa a 2 filas para no apretar todo en una línea */
+@media (max-width: 480px) {
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+  }
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+}
 
 /* ===== 4. HERO ===== */
 .hero {
@@ -265,7 +285,11 @@ section h2 {
 }
 
 @media (min-width: 640px) {
-    .galeria-grid { grid-template-columns: repeat(4, 1fr); }
+  .galeria-grid { grid-template-columns: repeat(3, 1fr); }
+}
+ 
+@media (min-width: 900px) {
+  .galeria-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
 .thumb {
