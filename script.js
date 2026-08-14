@@ -112,6 +112,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
+    /* ===== 4.5 TRIVIA / DATOS CURIOSOS ===== */
+  const datosCuriosos = [
+    'Sally Acorn debutó en 1993 en la serie animada "Sonic the Hedgehog" (conocida como SatAM).',
+    'Su dispositivo de inteligencia artificial, NICOLE, empezó como una simple computadora de mano.',
+    'Sally es hija del Rey Max Acorn, gobernante de Knothole antes de ser derrocado por el Dr. Robotnik.',
+    'En los cómics de Archie, Sally lideró a los Freedom Fighters desde muy joven.',
+    'A diferencia de Sonic, Sally se caracteriza por su enfoque estratégico y pensamiento táctico en batalla.',
+    'Sally ha tenido varios rediseños de vestuario a lo largo de las distintas eras de los cómics.',
+    'Su nombre completo en algunos materiales es Sally Alicia Acorn.'
+  ];
+ 
+  const triviaBtn = document.getElementById('trivia-btn');
+  const triviaTexto = document.getElementById('trivia-texto');
+  const triviaContador = document.getElementById('trivia-contador');
+  const triviaCard = document.querySelector('.trivia-card');
+  let ultimoIndice = -1;
+  let vistos = 0;
+ 
+  triviaBtn.addEventListener('click', () => {
+    let indice;
+    do {
+      indice = Math.floor(Math.random() * datosCuriosos.length);
+    } while (indice === ultimoIndice && datosCuriosos.length > 1);
+ 
+    ultimoIndice = indice;
+    vistos = Math.min(vistos + 1, datosCuriosos.length);
+ 
+    triviaTexto.textContent = datosCuriosos[indice];
+    triviaContador.textContent = `Dato ${indice + 1} de ${datosCuriosos.length}`;
+ 
+    // Reinicia la animación quitando y agregando la clase
+    triviaCard.classList.remove('pulso');
+    void triviaCard.offsetWidth; // fuerza reflow para que la animación se repita
+    triviaCard.classList.add('pulso');
+  });
+
     /* ===== 5. QUIZ CON PUNTAJE ===== */
   const quizForm = document.getElementById('quiz-form');
   const quizResultado = document.getElementById('quiz-resultado');

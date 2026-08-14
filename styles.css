@@ -424,6 +424,47 @@ section h2 {
 
 .apariciones-lista li[hidden] { display: none; }
 
+/* ===== 9.5 TRIVIA / DATOS CURIOSOS ===== */
+.trivia {
+  text-align: center;
+}
+ 
+.trivia-card {
+  background: var(--color-surface);
+  border: 2px dashed var(--color-leaf);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  max-width: 550px;
+  margin: 0 auto var(--space-md);
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: transform var(--transition);
+}
+ 
+.trivia-card.pulso {
+  animation: pulso 0.4s ease;
+}
+ 
+@keyframes pulso {
+  0% { transform: scale(0.97); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+ 
+#trivia-texto {
+  font-size: 1.1rem;
+  color: var(--color-cream);
+}
+ 
+.trivia-contador {
+  font-size: 0.8rem;
+  color: var(--color-cream-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 /* ===== 10. QUIZ ===== */
 #quiz-form fieldset {
     border: none;
