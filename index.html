@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fan page dedicada a Sally Acorn, princesa de Knothole del universo Sonic the Hedgehog.">
+    <title>Sally Acorn | Fanpage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ===== HEADER / NAV ===== -->
+    <header class="site-header">
+        <div class="logo">SA.</div>
+        <nav aria-label="Navegación principal">
+            <ul class="nav-links">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#bio">Ficha</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#timeline">Línea de tiempo</a></li>
+                <li><a href="#apariciones">Apariciones</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+            </ul>
+        </nav>
+        <!-- Toggle dark/light mode -->
+        <button id="theme-toggle" aria-label="Cambiar tema claro/oscuro" aria-pressed="false">
+            🌙
+        </button>
+    </header>
+
+    <main>
+        <!-- ===== HERO =====  -->
+         <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1>Sally Acorn</h1>
+                <p class="hero-subtitle">Princesa de Knothole. Líder de los Freedom Fighters. Estratega nata.</p>
+                <a href="#bio" class="btn-primary">Conócela</a>
+            </div>
+            <figure class="hero-image">
+                <img src="assets/sally-hero.jpg" alt="Retrato de Sally Acorn" width="600" height="700">
+                <figcaption class="visually-hidden">Sally Acorn, versión clásica</figcaption>
+            </figure>
+         </section>
+         <!-- ===== FICHA DE PERSONAJE ===== -->
+          <section id="bio" class="bio">
+            <h2>Ficha de personaje</h2>
+            <div class="bio-grid">
+                <article class="stat-card">
+                    <h3>Especie</h3>
+                    <p>Ardilla antropomórfica</p>
+                </article>
+                <article class="stat-card">
+                    <h3>Ocupación</h3>
+                    <p>Princesa de Knothole / Líder de los Freedom Fighters</p>
+                </article>
+                <article class="stat-card">
+                    <h3>Habilidades</h3>
+                    <p>Estrategia militar, artes marciales, manejo de tecnología (NICOLE)</p>
+                </article>
+                <article class="stat-card">
+                    <h3>Aliados</h3>
+                    <p>Sonic, Tails, Antoine, Rotor, Bunnie</p>
+                </article>
+            </div>
+          </section>
+
+          <!-- ===== GALERÍA CON LIGHTBOX ===== -->
+           <section id="galeria-grid">
+           <h2>Galería</h2>
+           <div class="galeria-grid">
+            <figure class="thumb" tabindex="0">
+                <img src="assets/sally-01.jpg" alt="Sally Acorn - versión clásica SatAM" loading="lazy">
+            </figure>
+            <figure class="thumb" tabindex="0">
+                <img src="assets/sally-02.jpg" alt="Sally Acorn - cómics de Archie" loading="lazy">
+            </figure>
+            <figure class="thumb" tabindex="0">
+                <img src="assets/sally-03.jpg" alt="Sally Acorn - con NICOLE" loading="lazy">
+            </figure>
+            <figure class="thumb" tabindex="0">
+                <img src="assets/sally-04.jpg" alt="Sally Acorn - Freedom Fighters" loading="lazy">
+            </figure>
+           </div>
+
+           <!-- Modal / Lightbox (oculto por defecto, lo controla JS) -->
+            <div id="lightbox" class="lightbox" hidden>
+                <button id="lightbox-close" class="lightbox-close" aria-label="Cerrar imagen">&times;</button>
+                <img id="lightbox-img" src="" alt="">
+            </div>
+           </section>
+
+           <!-- ===== TIMELINE ===== -->
+           <section id="timeline" class="timeline">
+            <h2>Línea de tiempo</h2>
+            <ol class="timeline-list">
+                <li>
+                    <h3>1993 - Sonic the Hedgehog (SaTam)</h3>
+                    <p>Debut de Sally como líder de los Freedom Fighters en la serie animada.</p>
+                </li>
+                <li>
+                    <h3>1993 - Cómics de Archie</h3>
+                    <p>Se expande su historia y relación con Sonic en el cómic mensual.</p>
+                </li>
+                <li>
+                    <h3>2000s - Rediseños</h3>
+                    <p>Cambios de vestuario y personalidad conforme evoluciona la serie de cómics.</p>
+                </li>
+                <li>
+                    <h3>Actualidad</h3>
+                    <p>Sigue siendo un personaje querido por la comunidad de fans, con distintas versiones según la era.</p>
+                </li>
+            </ol>
+           </section>
+
+           <!-- ===== COMPARADOR DE VERSIONES (extra) ===== -->
+            <section id="comparador" class="comparador">
+                <h2>Clásica vs Moderna</h2>
+                <div class="comparador-wrapper">
+                    <img src="assets/sally-clasica.jpg" alt="Sally Acorn versión clásica">
+                    <img src="assets/sally-moderna.jpg" alt="Sally Acorn versión moderna">
+                    <input type="range" id="comparador-slider" min="0" max="100" value="50" aria-label="Deslizar para comparar versiones">
+                </div>
+            </section>
+
+            <!-- ===== APARICIONES (con buscador/filtro) ===== -->
+             <section id="apariciones" class="apariciones">
+                <h2>Apariciones</h2>
+                <input type="search" id="filtro-apariciones" placeholder="Buscar por juego, cómic o serie...">
+                <ul id="lista-apariciones" class="apariciones-lista">
+                    <li data-categoria="serie">Sonic the Hedgehog (SaTam) - 1993</li>
+                    <li data-categoria="comic">Archie Comics - 1993-2017</li>
+                    <li data-categoria="juego">Sonic Spinball - 1993</li>
+                    <li data-categoria="juego">Sonic.exe The Disaster - 2025</li>
+                </ul>
+             </section>
+
+             <!-- ===== QUIZ ===== -->
+              <section id="quiz" class="quiz">
+                <h2>¿Que tanto sabes de Sally Acorn?</h2>
+                <form id="quiz-form">
+                    <fieldset>
+                        <legend>1. ¿Cuál es el nombre de la computadora/dispositivo de Sally?</legend>
+                        <label><input type="radio" name="p1" value="correcta"> NICOLE</label>
+                        <label><input type="radio" name="p1" value="incorrecta"> ARIA</label>
+                        <label><input type="radio" name="p1" value="incorrecta"> TAILS</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>2. ¿En qué serie animada debuto Sally?</legend>
+                        <label><input type="radio" name="p2" value="correcta"> Sonic the Hedgehog (SaTam)</label>
+                        <label><input type="radio" name="p2" value="incorrecta"> Sonic X</label>
+                        <label><input type="radio" name="p2" value="correcta"> Sonic Boom</label>
+                    </fieldset>
+                    <button type="submit" class="btn-primary">Ver resultado</button>
+                </form>
+                <p id="quiz-resultado" aria-live="politie"></p>
+              </section>
+
+    </main>
+
+    <!-- ===== FOOTER =====  -->
+     <footer class="site-footer">
+        <p>Fan page hecha con fines educativos y de información de Sally Acorn.</p>
+        <p>Sally Acorn y personajes relacionados son propiedad de SEGA / Archie Comics.</p>
+     </footer>
+
+     <script src="script.js"></script>
+</body>
+</html>
